@@ -1,0 +1,981 @@
+/* ============================================
+   🌾 AI Crop Doctor - Farmer-Friendly Design
+   Clean, Calm, and Beautiful
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   Global Variables
+   ============================================ */
+:root {
+    --primary-green: #A8D5BA;
+    --accent-yellow: #FFD166;
+    --background: #FAFAF5;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --white: #FFFFFF;
+    --success: #4CAF50;
+    --warning: #FF9800;
+    --danger: #F44336;
+    --border: #E0E0E0;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --radius: 12px;
+    --radius-lg: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.top-navbar {
+    background: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brand-icon {
+    font-size: 2rem;
+    animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+.brand-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+/* Navigation Buttons */
+.stButton > button {
+    background: transparent !important;
+    color: var(--text-dark) !important;
+    border: none !important;
+    border-radius: var(--radius) !important;
+    padding: 0.75rem 1.5rem !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+.stButton > button:hover {
+    background: var(--primary-green) !important;
+    color: var(--white) !important;
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   Main Wrapper
+   ============================================ */
+.main-wrapper {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-green) 0%, #8BC6A0 100%);
+    border-radius: var(--radius-lg);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "🌾";
+    position: absolute;
+    font-size: 15rem;
+    opacity: 0.1;
+    top: -50px;
+    right: -50px;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.95);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   Action Section
+   ============================================ */
+.action-section {
+    margin: 3rem 0;
+}
+
+.action-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    height: 100%;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-voice {
+    border-color: var(--accent-yellow);
+}
+
+.card-image {
+    border-color: var(--primary-green);
+}
+
+.card-location {
+    border-color: #66B2FF;
+}
+
+.action-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.action-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.action-text {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Primary Buttons */
+.stButton[data-testid="baseButton-primary"] > button {
+    background: linear-gradient(135deg, var(--accent-yellow) 0%, #FFB84D 100%) !important;
+    color: var(--text-dark) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 12px rgba(255, 209, 102, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton[data-testid="baseButton-primary"] > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 209, 102, 0.5) !important;
+}
+
+/* ============================================
+   Info Banner
+   ============================================ */
+.info-banner {
+    background: linear-gradient(135deg, #FFF9E6 0%, #FFF4CC 100%);
+    border-left: 4px solid var(--accent-yellow);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.info-text {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+.features-section {
+    margin: 4rem 0 2rem;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.feature-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-box h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+/* ============================================
+   Page Header
+   ============================================ */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
+/* ============================================
+   Progress Steps
+   ============================================ */
+.progress-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+    gap: 1rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    background: var(--border);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.step.active .step-circle {
+    background: linear-gradient(135deg, var(--primary-green), #8BC6A0);
+    color: var(--white);
+    box-shadow: 0 4px 12px rgba(168, 213, 186, 0.4);
+}
+
+.step-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.step-line {
+    width: 60px;
+    height: 3px;
+    background: var(--border);
+    margin: 0 0.5rem;
+}
+
+/* ============================================
+   Input Cards
+   ============================================ */
+.input-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-green);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+}
+
+.card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.card-description {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ============================================
+   Upload Preview
+   ============================================ */
+.upload-preview {
+    background: #F0F8F4;
+    border: 2px solid var(--primary-green);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.success-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #E8F5E9;
+    border-radius: var(--radius);
+}
+
+.badge-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--success);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.badge-text {
+    color: var(--success);
+    font-weight: 600;
+}
+
+/* ============================================
+   Location Badge
+   ============================================ */
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+}
+
+.location-icon {
+    font-size: 1.25rem;
+}
+
+.location-text {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   Language Selection Badge
+   ============================================ */
+.language-selection-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    border-left: 4px solid var(--primary-green);
+}
+
+.language-icon {
+    font-size: 1.5rem;
+}
+
+.language-text {
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.language-text strong {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+/* ============================================
+   Generate Section
+   ============================================ */
+.generate-section {
+    margin: 3rem 0;
+}
+
+/* ============================================
+   Processing Box
+   ============================================ */
+.processing-box {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+    box-shadow: var(--shadow-lg);
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    border: 4px solid var(--border);
+    border-top-color: var(--primary-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.processing-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.processing-text {
+    color: var(--text-light);
+}
+
+/* ============================================
+   Results Container
+   ============================================ */
+.results-container {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.results-header {
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.results-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.results-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   Diagnosis Summary
+   ============================================ */
+.diagnosis-summary {
+    background: linear-gradient(135deg, #F0F8F4, #E8F5E9);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 3px solid var(--primary-green);
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-icon {
+    font-size: 3rem;
+}
+
+.summary-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.status-healthy {
+    color: var(--success);
+}
+
+.status-risk {
+    color: var(--warning);
+}
+
+.status-infected {
+    color: var(--danger);
+}
+
+/* Severity Bar */
+.severity-bar {
+    width: 100%;
+    height: 12px;
+    background: #E0E0E0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.severity-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--success) 0%, var(--warning) 50%, var(--danger) 100%);
+    transition: width 1s ease;
+}
+
+/* ============================================
+   Report Sections
+   ============================================ */
+.report-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.transcription-text {
+    background: #F9F9F9;
+    border-left: 4px solid var(--accent-yellow);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+/* ============================================
+   Audio Section
+   ============================================ */
+.audio-section {
+    background: linear-gradient(135deg, #FFF9E6, #FFF4CC);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   Action Buttons
+   ============================================ */
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* ============================================
+   Alert Boxes
+   ============================================ */
+.alert-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin: 2rem 0;
+}
+
+.alert-warning {
+    background: #FFF3E0;
+    border-left: 4px solid var(--warning);
+}
+
+.alert-icon {
+    font-size: 2rem;
+}
+
+.alert-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.alert-content p {
+    color: var(--text-light);
+    margin: 0.5rem 0;
+}
+
+/* ============================================
+   Empty State
+   ============================================ */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.empty-icon {
+    font-size: 5rem;
+    opacity: 0.3;
+    margin-bottom: 1rem;
+}
+
+.empty-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.empty-text {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* ============================================
+   Help & About Pages
+   ============================================ */
+.help-card, .report-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.help-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.contact-box {
+    background: #F9F9F9;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-box strong {
+    display: block;
+    color: var(--primary-green);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-box a {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    color: var(--primary-green);
+    text-decoration: underline;
+}
+
+.help-list {
+    list-style: none;
+    padding: 0;
+}
+
+.help-list li {
+    padding: 0.5rem 0;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.help-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: 700;
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.about-section {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.about-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.about-text {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tech-box {
+    background: #F9F9F9;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.tech-box h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.tech-box p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.app-footer {
+    background: linear-gradient(135deg, var(--primary-green), #8BC6A0);
+    color: var(--white);
+    padding: 3rem 2rem 1.5rem;
+    margin-top: 4rem;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+
+.footer-section a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .summary-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .progress-steps {
+        flex-direction: column;
+    }
+    
+    .step-line {
+        width: 3px;
+        height: 40px;
+    }
+
+    
+}
