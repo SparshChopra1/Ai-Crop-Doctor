@@ -16,7 +16,7 @@ UPLOAD_DIR.mkdir(exist_ok=True)
 
 # API Keys
 ASSEMBLY_AI_KEY = os.getenv("ASSEMBLY_AI_KEY", "ceb7e80fe4d94821ac353cdc9012eaaa")
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "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")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "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")
 PLANT_ID_API_KEY = os.getenv("PLANT_ID_API_KEY", "FWkOQW9MDxa3RLEw3tHDwPfN9RAMdVKRPHUXu8vTDTvgoMNkeC")
 
 # API Configuration
