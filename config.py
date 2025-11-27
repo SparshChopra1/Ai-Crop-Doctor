@@ -15,7 +15,7 @@ UPLOAD_DIR = BASE_DIR / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
 
 # API Keys
-ASSEMBLY_AI_KEY = os.getenv("ASSEMBLY_AI_KEY", "ceb7e80fe4d94821ac353cdc9012eaaa")
+ASSEMBLY_AI_KEY = os.getenv("ASSEMBLY_AI_KEY", "8f30adf4486b405e949c3f4dea3f4c6f")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "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")
 PLANT_ID_API_KEY = os.getenv("PLANT_ID_API_KEY", "FWkOQW9MDxa3RLEw3tHDwPfN9RAMdVKRPHUXu8vTDTvgoMNkeC")
 
